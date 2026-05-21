@@ -1,0 +1,214 @@
+TEST_PASTE_VALUE_42<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mashura Product Integration Flash Report — Procurement Update</title>
+<style>
+:root {
+  --black:#050505;
+  --charcoal:#1e1e1e;
+  --white:#ffffff;
+  --paper:#f7f7f5;
+  --line:#d9dee7;
+  --text:#20242a;
+  --muted:#667085;
+  --blue:#2563eb;
+  --navy:#0b1f3a;
+  --green:#1f8a4c;
+  --yellow:#b7791f;
+  --red:#c84646;
+  --green-bg:#eaf7ef;
+  --yellow-bg:#fff7e6;
+  --red-bg:#fff1f1;
+  --blue-bg:#eef4ff;
+  --gray-bg:#eef1f5;
+}
+* { box-sizing: border-box; }
+body { margin:0; padding:28px; background:var(--paper); color:var(--text); font-family:Arial, Helvetica, sans-serif; }
+.page { max-width:1440px; margin:0 auto; background:var(--white); border-radius:22px; overflow:hidden; box-shadow:0 18px 50px rgba(0,0,0,.10); border:1px solid #eceff4; }
+.brandbar { background:var(--black); color:var(--white); padding:22px 28px; display:flex; justify-content:space-between; gap:24px; align-items:flex-start; }
+.brand { font-size:16px; letter-spacing:2px; font-weight:900; text-transform:uppercase; }
+h1 { margin:6px 0 0; font-size:30px; line-height:1.15; }
+.meta { text-align:right; font-size:13px; line-height:1.7; color:#e8eaef; min-width:250px; }
+.section { padding:24px 28px; border-bottom:1px solid var(--line); }
+.section h2 { margin:0 0 14px; font-size:20px; letter-spacing:.2px; }
+.section-sub { margin-top:-6px; margin-bottom:18px; color:var(--muted); font-size:13px; line-height:1.45; }
+.cards { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:20px; }
+.card { border:1px solid var(--line); border-radius:16px; padding:16px; background:#fff; min-height:120px; }
+.card.blue { background:var(--blue-bg); border-top:6px solid var(--blue); }
+.card.green { background:var(--green-bg); border-top:6px solid var(--green); }
+.card.yellow { background:var(--yellow-bg); border-top:6px solid var(--yellow); }
+.card.white { background:#fff; border-top:6px solid var(--black); }
+.card.red { background:var(--red-bg); border-top:6px solid var(--red); }
+.label { font-size:12px; text-transform:uppercase; color:var(--muted); font-weight:800; margin-bottom:8px; }
+.value { font-size:32px; font-weight:900; margin-bottom:8px; }
+.note { font-size:13px; color:#354052; line-height:1.4; }
+.table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:#fff; }
+table { width:100%; border-collapse:collapse; min-width:980px; }
+th { background:var(--black); color:var(--white); text-align:left; padding:10px 11px; font-size:12px; text-transform:uppercase; letter-spacing:.2px; }
+td { border-top:1px solid #edf0f5; padding:10px 11px; font-size:13px; line-height:1.35; vertical-align:top; }
+td.num { font-weight:900; text-align:right; white-space:nowrap; }
+.pill { display:inline-flex; align-items:center; padding:4px 9px; border-radius:999px; font-size:12px; font-weight:900; border:1px solid transparent; white-space:nowrap; }
+.pill.green { background:var(--green-bg); color:var(--green); border-color:#a5d7b9; }
+.pill.yellow { background:var(--yellow-bg); color:var(--yellow); border-color:#f2d9a0; }
+.pill.red { background:var(--red-bg); color:var(--red); border-color:#f1b5b5; }
+.pill.gray { background:#eef1f5; color:#4b5563; border-color:#d1d5db; }
+.pill.blue { background:var(--blue-bg); color:var(--blue); border-color:#bcd2ff; }
+.dash-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
+.dash-card { border:1px solid var(--line); border-radius:15px; padding:14px; background:#fff; min-height:190px; }
+.dash-top { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.dash-num { width:28px; height:28px; border-radius:999px; background:var(--black); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:900; font-size:12px; }
+.dash-card h4 { margin:12px 0 8px; font-size:15px; }
+.dash-card p { margin:6px 0; font-size:12.5px; line-height:1.35; color:#344054; }
+.small { color:var(--muted) !important; font-size:12px !important; }
+.kpi-summary { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:16px; }
+.kpi-card { border:1px solid var(--line); border-radius:15px; padding:15px; background:#fff; }
+.kpi-card strong { display:block; font-size:26px; margin:4px 0; }
+.support-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.support-card { border:1px solid var(--line); border-radius:15px; padding:15px; background:var(--paper); }
+.support-card h4 { margin:0 0 8px; }
+a { color:var(--blue); font-weight:800; text-decoration:none; }
+.footer { padding:18px 28px 26px; color:var(--muted); font-size:12px; }
+@media (max-width:1100px) { .cards,.dash-grid,.support-grid,.kpi-summary { grid-template-columns:1fr; } .brandbar { flex-direction:column; } .meta { text-align:left; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="brandbar">
+    <div>
+      <div class="brand">MASHURA</div>
+      <h1>Product Integration Flash Report — ELT View</h1>
+      <div class="note" style="color:#d7dce5;margin-top:8px;">OKRs are separated from projects/roadmaps. OKR dashboard cards now compare against the Procurement Fulfillment KPI worksheet.</div>
+    </div>
+    <div class="meta">
+      <strong>Report Date:</strong> May 20, 2026<br/>
+      <strong>Q2 Deadline:</strong> June 30, 2026<br/>
+      <strong>Days Left:</strong> 41<br/>
+      <strong>Owner:</strong> Aaron Nalick
+    </div>
+  </header>
+
+  <section class="section">
+    <h2>1. OKRs / Objectives — ELT Summary</h2>
+    <div class="section-sub">This section is only for OKR movement, objective pacing, and KPI dashboard readiness. Project/roadmap updates remain separated below.</div>
+    <div class="cards">
+      <div class="card blue"><div class="label">Overall Objective Progress</div><div class="value" style="color:var(--blue);">70%</div><div class="note">Closer to closing the Q2 gap than previously reported.</div></div>
+      <div class="card green"><div class="label">OKR-1 Roadmap</div><div class="value" style="color:var(--green);">100%</div><div class="note">Company-facing Cubex/Zimbis roadmaps built and shipped in Notion in Q1'26.</div></div>
+      <div class="card yellow"><div class="label">OKR-2 KPI Dashboards</div><div class="value" style="color:var(--yellow);">Yellow</div><div class="note">10 dashboards/cards cleaned, sanitized, almost operational, and now crosswalked to Procurement Fulfillment KPIs.</div></div>
+      <div class="card white"><div class="label">Remaining Gap</div><div class="value">30%</div><div class="note">Full run, QA/inspection, D1.5 alias map, and missing dashboard-card iteration.</div></div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>OKR</th><th>Objective</th><th>Stage</th><th>Status</th><th>Current</th><th>Target</th><th>Gap</th><th>ELT Leadership Summary</th><th>Next Action</th></tr></thead>
+        <tbody>
+          <tr><td><strong>OKR-1</strong></td><td>Publish Integration Roadmap for 2026</td><td>Shipped Q1'26</td><td><span class="pill green">Green</span></td><td class="num">100%</td><td class="num">100%</td><td class="num">0%</td><td>Company-facing Cubex and Zimbis roadmaps were built and shipped in Notion in Q1'26. Q2 focus is governance, maintenance, and weekly Flash movement.</td><td>Maintain public roadmap sources and use weekly Flash status signals to separate committed delivery from exploratory/dependency-driven work.</td></tr>
+          <tr><td><strong>OKR-2</strong></td><td>Company-Facing Metrics on Product Integration Adoption</td><td>Pre-QA Full Run Next Week</td><td><span class="pill yellow">Yellow</span></td><td class="num">70%</td><td class="num">85%</td><td class="num">15%</td><td>KPI dashboard work is yellow, not red: 10 dashboards/cards are cleaned, sanitized, and almost operational. Cards now compare against the Procurement Fulfillment KPI worksheet.</td><td>Complete the full run next week, inspect output quality, move cards through QA, then iterate the remaining procurement fulfillment dashboard gaps.</td></tr>
+          <tr><td><strong>OKR-3</strong></td><td>Trusted Customer Tier Data Foundation</td><td>Validation In Progress</td><td><span class="pill yellow">Yellow</span></td><td class="num">60%</td><td class="num">85%</td><td class="num">25%</td><td>Tier validation work is materially closer than previously reported. The remaining decision is the doctor-count source for final formula refinement.</td><td>Locate doctor-count source, extend tier formula, and run crosswalk validation against the 3,097 vet tenant foundation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>OKR-2 Dashboard Cards — Almost Operational</h2>
+    <div class="section-sub">The KPI dashboard work is yellow. Next week is the full run before QA/inspection; cards below now explicitly compare to the Procurement Fulfillment KPI worksheet.</div>
+    <div class="dash-grid">
+      <div class="dash-card"><div class="dash-top"><span class="dash-num">1</span><span class="pill yellow">Yellow</span></div><h4>Integration Adoption Summary</h4><p><strong>Readiness:</strong> Almost Operational</p><p><strong>Procurement KPI:</strong> Device Share of Total Practice Spend; Device Monthly Revenue Velocity</p><p class="small"><strong>Need:</strong> Full run before QA/inspection.</p></div>
+      <div class="dash-card"><div class="dash-top"><span class="dash-num">2</span><span class="pill yellow">Yellow</span></div><h4>PMS Activation</h4><p><strong>Readiness:</strong> Almost Operational</p><p><strong>Procurement KPI:</strong> Segmentation prerequisite for GP/ER/Specialty benchmarks</p><p class="small"><strong>Need:</strong> Validate station-level PIMS assignment.</p></div>
+      <div class="dash-card"><div class="dash-top"><span class="dash-num">3</span><span class="pill yellow">Yellow</span></div><h4>PMP Activation</h4><p><strong>Readiness:</strong> Almost Operational</p><p><strong>Procurement KPI:</strong> Segmentation prerequisite for controlled/PMP-facing views</p><p class="small"><strong>Need:</strong> Validate PMP category rollups.</p></div>
+      <div class="dash-card"><div class="dash-top"><span class="dash-num">4</span><span class="pill yellow">Yellow</span></div><h4>Billing Activation %</h4><p><strong>Readiness:</strong> Almost Operational</p><p><strong>Procurement KPI:</strong> SKU Revenue Concentration; Device Share of Spend</p><p class="small"><strong>Need:</strong> Inspect billing and revenue attribution logic.</p></div>
+      <div class="dash-card"><div class="dash-top"><span class="dash-num">5</span><span class="pill yellow">Yellow</span></div><h4>Supplier Activation</h4><p><strong>Readiness:</strong> Needs Alias Map</p><p><strong>Procurement KPI:</strong> Shadow Purchase Rate; Competitor Displacement/Retention</p><p class="small"><strong>Need:</strong> Ship D1.5 alias map.</p></div>
+      <div class="dash-card"><div class="dash-top"><span class="dash-num">6</span><span class="pill yellow">Yellow</span></div><h4>Procurement / PO Usage</h4><p><strong>Readiness:</strong> Almost Operational</p><p><strong>Procurement KPI:</strong> Reorder Automation Rate; Consumption-to-Order Lead Time</p><p class="small"><strong>Need:</strong> Validate PO_Usage by station/customer tier.</p></div>
+      <div class="dash-card"><div class="dash-top"><span class="dash-num">7</span><span class="pill yellow">Yellow</span></div><h4>Managed Catalog Products per Device</h4><p><strong>Readiness:</strong> Almost Operational</p><p><strong>Procurement KPI:</strong> Formulary Penetration; Inventory Turnover Velocity</p><p class="small"><strong>Need:</strong> Inspect Num_Items by product line.</p></div>
+      <div class="dash-card"><div class="dash-top"><span class="dash-num">8</span><span class="pill yellow">Yellow</span></div><h4>Dispense Velocity</h4><p><strong>Readiness:</strong> Almost Operational</p><p><strong>Procurement KPI:</strong> Real-Time Consumption Velocity; Inventory Turnover Velocity</p><p class="small"><strong>Need:</strong> Freshness and outlier inspection.</p></div>
+      <div class="dash-card"><div class="dash-top"><span class="dash-num">9</span><span class="pill yellow">Yellow</span></div><h4>Customer Tier / Activation Crosswalk</h4><p><strong>Readiness:</strong> Almost Operational</p><p><strong>Procurement KPI:</strong> Tiered benchmark segmentation; practice-type validation</p><p class="small"><strong>Need:</strong> Add doctor-count input when confirmed.</p></div>
+      <div class="dash-card"><div class="dash-top"><span class="dash-num">10</span><span class="pill yellow">Yellow</span></div><h4>Live Integrations Snapshot</h4><p><strong>Readiness:</strong> Almost Operational</p><p><strong>Procurement KPI:</strong> Executive KPI dashboard surface</p><p class="small"><strong>Need:</strong> QA inspection and missing-card iteration.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Procurement Fulfillment KPI Coverage — Compared Against Worksheet</h2>
+    <div class="section-sub">Coverage is based on the uploaded Procurement Fulfillment KPI worksheet categories: Financial, Displacement, Operational, and Data Asset.</div>
+    <div class="kpi-summary">
+      <div class="kpi-card"><div class="label">Source KPIs</div><strong>13</strong><div class="note">Reviewed from the worksheet.</div></div>
+      <div class="kpi-card"><div class="label">Directly Mapped</div><strong style="color:var(--green);">4</strong><div class="note">Ready for full-run validation.</div></div>
+      <div class="kpi-card"><div class="label">Partially Mapped</div><strong style="color:var(--yellow);">5</strong><div class="note">Needs alias/costing/manifest/IOH linkage.</div></div>
+      <div class="kpi-card"><div class="label">Missing / Next Iteration</div><strong style="color:var(--red);">4</strong><div class="note">Build into the next dashboard wave after QA.</div></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Procurement KPI</th><th>Worksheet Tier</th><th>Coverage</th><th>Mapped Flash Card(s)</th><th>Status</th><th>Gap / Next Action</th></tr></thead>
+        <tbody>
+          <tr><td>Device Share of Total Practice Spend</td><td>Financial</td><td><span class="pill yellow">Partial</span></td><td>Integration Adoption Summary; Billing Activation %</td><td><span class="pill yellow">Yellow</span></td><td>Validate denominator for total practice supply spend from costing dataset.</td></tr>
+          <tr><td>Device Monthly Revenue Velocity</td><td>Financial</td><td><span class="pill green">Direct</span></td><td>Integration Adoption Summary; Procurement / PO Usage</td><td><span class="pill yellow">Yellow</span></td><td>Full run on auto-replenishment value per device and active-month denominator.</td></tr>
+          <tr><td>Competitor Spend Displacement Rate</td><td>Displacement</td><td><span class="pill red">Missing/New Card</span></td><td>Supplier Activation</td><td><span class="pill red">Next Iteration</span></td><td>Create displacement card after baseline/current competitor invoice logic is available.</td></tr>
+          <tr><td>Device Shadow Purchase Rate</td><td>Displacement</td><td><span class="pill yellow">Partial</span></td><td>Supplier Activation; Managed Catalog Products per Device</td><td><span class="pill yellow">Yellow</span></td><td>Dependent on D1.5 supplier alias and SKU matching table.</td></tr>
+          <tr><td>Competitor Spend Retention Trend</td><td>Displacement</td><td><span class="pill red">Missing/New Card</span></td><td>Supplier Activation</td><td><span class="pill red">Next Iteration</span></td><td>Add MoM competitor spend trend after invoice telemetry alignment.</td></tr>
+          <tr><td>Device SKU Revenue Concentration</td><td>Displacement</td><td><span class="pill yellow">Partial</span></td><td>Billing Activation %; Managed Catalog Products per Device</td><td><span class="pill yellow">Yellow</span></td><td>Requires SKU-level revenue and SKU master classification QA.</td></tr>
+          <tr><td>Point-of-Care Stockout Rate</td><td>Operational</td><td><span class="pill red">Missing/New Card</span></td><td>Managed Catalog Products per Device</td><td><span class="pill red">Next Iteration</span></td><td>Build stockout card from zero-bin / critical-level inventory events.</td></tr>
+          <tr><td>Device Formulary Penetration</td><td>Operational</td><td><span class="pill yellow">Partial</span></td><td>Managed Catalog Products per Device</td><td><span class="pill yellow">Yellow</span></td><td>Compare practice top-50 dollar-volume SKUs to device manifest.</td></tr>
+          <tr><td>Device Inventory Turnover Velocity</td><td>Operational</td><td><span class="pill yellow">Partial</span></td><td>Managed Catalog Products per Device; Dispense Velocity</td><td><span class="pill yellow">Yellow</span></td><td>Needs IOH average and device consumption tie-out.</td></tr>
+          <tr><td>Reorder Automation Rate</td><td>Operational</td><td><span class="pill green">Direct</span></td><td>Procurement / PO Usage</td><td><span class="pill yellow">Yellow</span></td><td>Compare auto-generated/electronically submitted orders vs manual flows.</td></tr>
+          <tr><td>Device Expiry Avoidance Rate</td><td>Operational</td><td><span class="pill red">Missing/New Card</span></td><td>Managed Catalog Products per Device</td><td><span class="pill red">Next Iteration</span></td><td>Needs bin-level expiry and rotation-action review.</td></tr>
+          <tr><td>Real-Time Consumption Velocity</td><td>Data Asset</td><td><span class="pill green">Direct</span></td><td>Dispense Velocity</td><td><span class="pill yellow">Yellow</span></td><td>Use 149M dispense rows and freshness/outlier inspection.</td></tr>
+          <tr><td>Consumption-to-Order Lead Time</td><td>Data Asset</td><td><span class="pill green">Direct</span></td><td>Procurement / PO Usage; Dispense Velocity</td><td><span class="pill yellow">Yellow</span></td><td>Join consumption timestamps to order generation timestamps.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>2. Projects & Roadmaps — Separate ELT Update Category</h2>
+    <div class="section-sub">Roadmap, support, dependency, and delivery workstreams are tracked separately from OKR/objective progress. IDEXX has been removed. Legisym is now yellow after the 5/18 re-alignment meeting.</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Business Unit</th><th>Project / Roadmap</th><th>Category</th><th>Stage</th><th>Status</th><th>Summary</th><th>Next Step</th><th>Timing</th><th>Needed Support</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Cubex</td><td><strong>Company-Facing Cubex Roadmap</strong></td><td>Company-Facing Roadmap</td><td>Shipped / Live</td><td><span class="pill green">Green</span></td><td>Built and shipped in Notion in Q1'26.</td><td>Maintain weekly movement, dependency status, and committed vs exploratory separation.</td><td>Live</td><td>None</td><td><a href="https://cubex.notion.site/Cubex-Roadmap-151f5480ec4b808882d5c3a7e0667f21?pvs=4">Source</a></td></tr>
+          <tr><td>Zimbis</td><td><strong>Company-Facing Zimbis Roadmap</strong></td><td>Company-Facing Roadmap</td><td>Shipped / Live</td><td><span class="pill green">Green</span></td><td>Built and shipped in Notion in Q1'26.</td><td>Maintain weekly movement, Beta/GTM readiness, and supportability notes.</td><td>Live</td><td>None</td><td><a href="https://cubex.notion.site/Zimbis-Roadmap-151f5480ec4b804c8326f20c9ddd801d?pvs=4">Source</a></td></tr>
+          <tr><td>Shared / Integration Support</td><td><strong>Integration Support Operating Process</strong></td><td>Internal Operating Process</td><td>Q2 Project</td><td><span class="pill yellow">Yellow</span></td><td>Project to convert support activity into measurable KPIs, PMS-pattern visibility, P1 routing, and roadmap signals.</td><td>Define Open Tickets KPI, frequent tickets/calls by PMS, and P1 escalation routing.</td><td>End of Q2</td><td>Support + Product alignment</td><td></td></tr>
+          <tr><td>Cubex</td><td><strong>CSOS / Legisym</strong></td><td>Supplier</td><td>Planning / Re-aligned</td><td><span class="pill yellow">Yellow</span></td><td>Re-alignment meeting held 5/18. Team is working to get back on track from plan; materially delayed by an estimated 2–3 weeks.</td><td>Confirm revised plan/timeline and track weekly until schedule recovers.</td><td>2–3 week delay; Q2 recovery plan</td><td>Partner follow-through; monitor recovery</td><td></td></tr>
+          <tr><td>Cubex</td><td><strong>Roadmap Governance</strong></td><td>Internal</td><td>Planning</td><td><span class="pill yellow">Yellow</span></td><td>Operating cadence still needs to be locked from intake through Flash reporting.</td><td>Finalize workflow and ownership model.</td><td>Q2</td><td>VP/Product review</td><td></td></tr>
+          <tr><td>Cubex</td><td><strong>Staffing Plan</strong></td><td>Internal</td><td>Planning</td><td><span class="pill red">Red</span></td><td>Capacity planning remains unresolved while portfolio pressure grows.</td><td>Confirm Q2/Q3 capacity decision.</td><td>Immediate</td><td>ELT decision</td><td></td></tr>
+          <tr><td>Cubex</td><td><strong>Vetcove</strong></td><td>Procurement</td><td>Supportability</td><td><span class="pill yellow">Yellow</span></td><td>Activation and training load continues to consume support bandwidth.</td><td>Tighten enablement/training playbook and feed metrics into the Support Operating Process project.</td><td>Immediate</td><td>Support capacity</td><td></td></tr>
+          <tr><td>Zimbis</td><td><strong>VEG-DogByte Billing + IOH Sync</strong></td><td>PMS</td><td>Beta</td><td><span class="pill green">Green</span></td><td>Billing and IOH Sync nearing completion and moving into Beta.</td><td>Complete Beta handoff and release-readiness review.</td><td>Q3 Target</td><td>None</td><td></td></tr>
+          <tr><td>Zimbis</td><td><strong>DSN</strong></td><td>PMS</td><td>GTM</td><td><span class="pill green">Green</span></td><td>Controlled rollout underway; readiness measured before scale-up.</td><td>Measure readiness from initial customer set.</td><td>TBD</td><td>None</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Integration Support Operating Process Project — Q2 Buildout</h2>
+    <div class="section-sub">Project objective: define support KPIs for open tickets, most frequent tickets/calls by PMS, and P1 escalation routing by end of Q2.</div>
+    <div class="support-grid">
+      <div class="support-card"><h4>Open Tickets KPI</h4><span class="pill yellow">In Progress</span><p>Open backlog, aging, ownership, P1/P2/P3/P4 mix, burn-down.</p><p class="small"><strong>Target:</strong> End of Q2</p></div>
+      <div class="support-card"><h4>Most Frequent Tickets / Calls by PMS</h4><span class="pill yellow">In Progress</span><p>Top issue drivers by PMS and root-cause category.</p><p class="small"><strong>Target:</strong> End of Q2</p></div>
+      <div class="support-card"><h4>P1 Escalation Routing</h4><span class="pill yellow">In Progress</span><p>Severity routing, owner path, status cadence, war-room trigger.</p><p class="small"><strong>Target:</strong> End of Q2</p></div>
+      <div class="support-card"><h4>Support-to-Roadmap Signal</h4><span class="pill yellow">Planned</span><p>Case pattern → product signal → prioritization queue.</p><p class="small"><strong>Target:</strong> Q3 transition</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Published Today vs. Still Needed</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Current State</th><th>Timing</th><th>Needed to Close</th><th>Category</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Company-facing Cubex Roadmap</strong></td><td><span class="pill green">Published / Live</span></td><td>Q1'26</td><td>Maintain and refresh movement weekly</td><td>Project/Roadmap</td></tr>
+          <tr><td><strong>Company-facing Zimbis Roadmap</strong></td><td><span class="pill green">Published / Live</span></td><td>Q1'26</td><td>Maintain and refresh movement weekly</td><td>Project/Roadmap</td></tr>
+          <tr><td><strong>10 KPI Dashboard Cards</strong></td><td><span class="pill yellow">Almost Operational</span></td><td>Current Week</td><td>Full run next week before QA/inspection</td><td>OKR-2</td></tr>
+          <tr><td><strong>Procurement Fulfillment KPI Worksheet Comparison</strong></td><td><span class="pill yellow">Added to OKR Cards</span></td><td>Current Week</td><td>Use comparison to drive missing-card iteration</td><td>OKR-2</td></tr>
+          <tr><td><strong>CSOS / Legisym</strong></td><td><span class="pill yellow">Yellow / Re-aligned</span></td><td>5/18 meeting; 2–3 week delay</td><td>Track revised plan and weekly recovery</td><td>Project/Roadmap</td></tr>
+          <tr><td><strong>Support Operating Process Project</strong></td><td><span class="pill yellow">In Progress</span></td><td>End of Q2</td><td>Complete Open Tickets KPI, frequent PMS tickets/calls, and P1 escalation routing</td><td>Project</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="footer">Mashura-themed Flash Report. Director input tabs are separated in the companion workbook so ELT receives a clean readout while source updates remain editable.</div>
+</main>
+</body>
+</html>
